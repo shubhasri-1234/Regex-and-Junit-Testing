@@ -8,18 +8,18 @@ public class UserTest {
 
     @Test
     public void testValidFirstName() {
-        assertTrue(UserValidation.isValidInput("John", "^[A-Z][a-zA-Z]{2,}$"));
+        assertTrue(UserValidation.isValidInput("Shubhasri", "^[A-Z][a-zA-Z]{2,}$"));
     }
 
     @Test
     public void testValidLastName() {
-        assertTrue(UserValidation.isValidInput("Doe", "^[A-Z][a-zA-Z]{2,}$"));
+        assertTrue(UserValidation.isValidInput("Tadepalli", "^[A-Z][a-zA-Z]{2,}$"));
     }
 
 
     @Test
     public void testValidEmail() {
-        assertTrue(UserValidation.isValidInput("john.doe@example.com", "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"));
+        assertTrue(UserValidation.isValidInput("shubha@example.com", "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class UserTest {
 
     @Test
     public void testValidPassword() {
-        assertTrue(UserValidation.isValidPassword("StrongP@ssword1"));
+        assertTrue(UserValidation.isValidPassword("Shubha@1234"));
     }
 
 }
