@@ -15,7 +15,8 @@ public class UserValidation {
         String lastName = getValidInput(scanner, "Enter your last name: ", "^[A-Z][a-zA-Z]{2,}$");
 
         // Validate Email
-        String email = getValidInput(scanner, "Enter your email: ", "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+        //"^[a-zA-z0-9]{1,}[\\.+-]?[a-zA-z0-9]+@[a-zA-z0-9]{1,}(\\.[a-zA-z]{2,}){1,2}$"
+        String email = getValidInput(scanner, "Enter your email: ", "^[a-zA-Z0-9_%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
 
         // Validate Mobile Number
         String mobileNumber = getValidInput(scanner, "Enter your mobile number: ", "^\\d{2} \\d{10}$");
@@ -77,7 +78,7 @@ public class UserValidation {
         if (!digitMatcher.find()) {
             return false;
         }
-
+        //(?=.*[0-9])(?=.*[A-Z])(?=[a-zA-Z0-9]*[^a-zA-Z0-9][a-zA-Z0-9]*$)(.){8,}
         // Rule 4: Has exactly 1 Special Character
         Pattern specialCharPattern = Pattern.compile("[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]");
         Matcher specialCharMatcher = specialCharPattern.matcher(password);

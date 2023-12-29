@@ -3,6 +3,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 public class UserTest {
@@ -55,6 +57,17 @@ public class UserTest {
     @Test
     public void testinValidPasswordsad() {
         assertFalse(UserValidation.isValidPassword("shubha"));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings ={
+        "abc@yahoo.com",
+        "abc.100@yahoo.com",
+        "abc111@abc.com"
+    })
+
+    public void ParameterizedTest(String validEmail){
+        assertTrue(UserValidation.isValidInput(validEmail, "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"));
     }
 
 }
